@@ -1,8 +1,15 @@
 /* Google Search Maps Link Extension - Styles */
 
 .gmaps-link-container {
-  margin-bottom: 12px;
-  padding: 8px 0;
+  margin-bottom: 12px !important;
+  padding-top: 6px !important;
+  padding-bottom: 8px !important;
+  padding-left: 6px !important;
+  padding-right: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  border-radius: 8px !important;
 }
 
 .gmaps-link {

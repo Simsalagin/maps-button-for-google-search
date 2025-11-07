@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Google Search Maps Link",
-  "version": "1.0",
-  "description": "Zeigt einen Google Maps Link über Karten in Google-Suchergebnissen an",
+  "name": "Maps Button for Google Search",
+  "version": "1.0.0",
+  "description": "Adds a convenient button to open locations directly in Google Maps from Google Search results",
   "permissions": [],
   "content_scripts": [
     {

@@ -1,141 +1,118 @@
-# Google Search Maps Link - Chrome Extension
+# Maps Button for Google Search
 
-Eine Chrome Extension, die automatisch einen Google Maps Link über Karten in Google-Suchergebnissen anzeigt.
+A lightweight Chrome extension that adds a convenient "Open in Google Maps" button above map results in Google Search, making it easy to quickly navigate to Google Maps with your search query.
 
-## 📋 Funktionen
+## Features
 
-- 🗺️ Erkennt automatisch Karten in Google-Suchergebnissen
-- 🔗 Fügt einen prominent platzierten "In Google Maps öffnen" Link hinzu
-- 🎨 Modernes, Google-ähnliches Design mit Dark Mode Support
-- ⚡ Funktioniert auch mit dynamisch geladenen Inhalten
-- 🌍 Unterstützt verschiedene Google-Domains (.com, .de, etc.)
+- Automatically detects maps in Google Search results
+- Adds a prominent, one-click button to open the location in Google Maps
+- Modern, Google-styled design with dark mode support
+- Works with dynamically loaded content
+- Supports multiple Google domains (.com, .de, etc.)
+- Privacy-friendly with no data collection
 
-## 🚀 Installation
+## Installation
 
-### Variante 1: Als unbundled Extension (Entwicklermodus)
+### Option 1: Install from Chrome Web Store (Coming Soon)
 
-1. **Repository klonen oder herunterladen:**
+The extension will be available on the Chrome Web Store soon.
+
+### Option 2: Install from Source (Developer Mode)
+
+1. Clone or download this repository:
    ```bash
    git clone https://github.com/Simsalagin/chrome-gsearch-with-gmap-link.git
    cd chrome-gsearch-with-gmap-link
    ```
 
-2. **Chrome Extensions-Seite öffnen:**
-   - Öffne Chrome und navigiere zu `chrome://extensions/`
-   - Oder: Menü (⋮) → "Weitere Tools" → "Erweiterungen"
+2. Open Chrome and navigate to `chrome://extensions/`
 
-3. **Entwicklermodus aktivieren:**
-   - Schalte den "Entwicklermodus" Toggle oben rechts ein
+3. Enable "Developer mode" using the toggle in the top-right corner
 
-4. **Extension laden:**
-   - Klicke auf "Entpackte Erweiterung laden"
-   - Wähle den Ordner mit den Extension-Dateien aus
-   - Die Extension sollte nun in der Liste erscheinen und aktiviert sein
+4. Click "Load unpacked" and select the extension directory
 
-### Variante 2: Von Chrome Web Store (noch nicht verfügbar)
+5. The extension is now installed and active
 
-Die Extension ist noch nicht im Chrome Web Store verfügbar.
+## Usage
 
-## 📖 Verwendung
+1. Visit [Google](https://www.google.com) and search for a location (e.g., "Eiffel Tower, Paris" or "restaurants near me")
 
-1. **Google-Suche öffnen:**
-   - Besuche [google.com](https://www.google.com) oder [google.de](https://www.google.de)
+2. When Google displays a map in the search results, you'll see a blue "Open in Google Maps" button above it
 
-2. **Nach einer Adresse suchen:**
-   - Suche nach einer Adresse, z.B. "Brandenburger Tor, Berlin"
-   - Oder suche nach einem Ort/Geschäft, z.B. "Restaurants in München"
+3. Click the button to open the location directly in Google Maps
 
-3. **Link verwenden:**
-   - Wenn Google eine Karte anzeigt, erscheint automatisch ein blauer Button "In Google Maps öffnen" oberhalb der Karte
-   - Klicke auf den Button, um die Adresse direkt in Google Maps zu öffnen
+## Development
 
-## 🛠️ Technische Details
+### Prerequisites
 
-### Dateien
+- Google Chrome or any Chromium-based browser
+- Basic knowledge of JavaScript and CSS
 
-- **manifest.json** - Konfigurationsdatei der Extension
-- **content.js** - Content Script, das Karten erkennt und Links einfügt
-- **styles.css** - Styling für den Google Maps Link
+### Making Changes
 
-### Wie es funktioniert
+1. Edit the source files as needed:
+   - `manifest.json` - Extension configuration
+   - `content.js` - Main logic for detecting maps and adding buttons
+   - `styles.css` - Button styling
 
-1. Die Extension läuft als Content Script auf allen Google-Suchseiten
-2. Ein MutationObserver überwacht die Seite auf Änderungen
-3. Wenn eine Karte erkannt wird, extrahiert die Extension die Suchanfrage
-4. Ein formatierter Link zu Google Maps wird über der Karte eingefügt
-5. Jede Karte wird nur einmal verarbeitet (WeakSet zur Duplikatvermeidung)
+2. Go to `chrome://extensions/` and click the reload icon for the extension
 
-### Unterstützte Domains
-
-- google.com
-- google.de
-- Weitere können in `manifest.json` hinzugefügt werden
-
-## 🎨 Features
-
-### Design
-
-- Moderner, Google-ähnlicher Button-Stil
-- Icon mit Standort-Pin
-- Hover- und Active-Effekte
-- Responsive Design für Mobile
-
-### Dark Mode
-
-Die Extension unterstützt automatisch den Dark Mode und passt die Farben entsprechend an.
-
-## 🔧 Entwicklung
-
-### Voraussetzungen
-
-- Google Chrome oder Chromium-basierter Browser
-- Grundkenntnisse in JavaScript/CSS
-
-### Extension bearbeiten
-
-1. Bearbeite die Dateien nach Bedarf
-2. Gehe zu `chrome://extensions/`
-3. Klicke auf das Reload-Symbol bei der Extension
-4. Teste die Änderungen
+3. Test your changes on a Google Search page
 
 ### Debugging
 
-- Öffne die Chrome DevTools (F12) auf einer Google-Suchseite
-- Schaue in die Console für Log-Ausgaben
-- Die Extension loggt, wenn sie aktiviert wird und Karten findet
+- Open Chrome DevTools (F12) on a Google Search page
+- Check the Console tab for log messages
+- The extension logs when it activates and detects maps
 
-## 📝 To-Do / Ideen für Erweiterungen
+## Privacy
 
-- [ ] Options-Seite für Anpassungen (z.B. Link-Text, Farbe)
-- [ ] Unterstützung für weitere Kartendienste (OpenStreetMap, Apple Maps)
-- [ ] Statistiken über erkannte Karten
-- [ ] Keyboard-Shortcuts
-- [ ] Icons hinzufügen
+This extension:
+- Does NOT collect any user data
+- Does NOT track your searches
+- Does NOT make external network requests
+- Only reads the search query from the current page URL
+- Requires no special permissions
 
-## 🐛 Bekannte Probleme
+## Chrome Web Store Listing
 
-- Bei sehr schnellen Navigation zwischen Suchergebnissen kann es zu Verzögerungen kommen
-- Manche Google-Seitenstrukturen werden möglicherweise nicht erkannt
+**Name:** Maps Button for Google Search
 
-## 🤝 Beitragen
+**Short Description:** Adds a convenient button to open locations directly in Google Maps from Google Search results
 
-Contributions sind willkommen! Bitte:
+**Detailed Description:**
+Maps Button for Google Search is a simple, privacy-friendly Chrome extension that enhances your Google Search experience by adding a quick-access button to open map results directly in Google Maps.
 
-1. Forke das Repository
-2. Erstelle einen Feature-Branch (`git checkout -b feature/AmazingFeature`)
-3. Committe deine Änderungen (`git commit -m 'Add some AmazingFeature'`)
-4. Push zum Branch (`git push origin feature/AmazingFeature`)
-5. Öffne einen Pull Request
+When you search for locations, addresses, or businesses on Google, the extension automatically detects map results and adds a prominent "Open in Google Maps" button above them. With one click, you can navigate to the full Google Maps interface for detailed navigation, street view, and more.
 
-## 📄 Lizenz
+Features:
+- One-click access to Google Maps from search results
+- Automatic detection of map results
+- Clean, Google-styled interface that matches your theme
+- Dark mode support
+- Works with local business results and location searches
+- Completely privacy-friendly - no data collection
+- Lightweight and fast
 
-Dieses Projekt ist open source und verfügbar unter der MIT License.
+Perfect for users who frequently search for locations and want quick access to the full Google Maps experience.
 
-## 👤 Autor
+Open Source: The complete source code is available on [GitHub](https://github.com/Simsalagin/chrome-gsearch-with-gmap-link)
 
-Erstellt mit ❤️ für eine bessere Google-Suche-Erfahrung
+## Contributing
 
-## 🙏 Danksagungen
+Contributions are welcome! To contribute:
 
-- Google Maps für die fantastische Kartenfunktionalität
-- Chrome Extension API Dokumentation
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Thanks to Google Maps for the excellent mapping functionality
+- Built with the Chrome Extension API

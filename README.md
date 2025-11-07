@@ -2,6 +2,24 @@
 
 A lightweight Chrome extension that adds a convenient "Open in Google Maps" button above map results in Google Search, making it easy to quickly navigate to Google Maps with your search query.
 
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+  - [Option 1: Install from Chrome Web Store](#option-1-install-from-chrome-web-store-coming-soon)
+  - [Option 2: Install from Source](#option-2-install-from-source-developer-mode)
+- [Usage](#usage)
+- [Development](#development)
+  - [Prerequisites](#prerequisites)
+  - [Making Changes](#making-changes)
+  - [Debugging](#debugging)
+  - [Building for Chrome Web Store](#building-for-chrome-web-store)
+- [Privacy](#privacy)
+- [Chrome Web Store Listing](#chrome-web-store-listing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 ## Features
 
 - Automatically detects maps in Google Search results
@@ -71,16 +89,35 @@ The extension will be available on the Chrome Web Store soon.
 
 ### Building for Chrome Web Store
 
-To package the extension for Chrome Web Store submission:
+To package the extension for Chrome Web Store submission, you have two options:
+
+#### Using npm (recommended):
 
 ```bash
 npm run build
 ```
 
-This will create `maps-button-for-google-search.zip` ready for upload. The build script automatically:
+#### Using build.sh directly:
+
+```bash
+./build.sh
+```
+
+Or if you need to make it executable first:
+
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+Both methods will create `maps-button-for-google-search.zip` ready for upload to the Chrome Web Store.
+
+The build script automatically:
+- Cleans up any previous build artifacts
 - Packages only necessary files (manifest, scripts, styles, icons)
-- Excludes development files and artifacts
+- Excludes development files and system artifacts (.DS_Store)
 - Creates a properly formatted ZIP file
+- Displays the package size and contents for verification
 
 ## Privacy
 
